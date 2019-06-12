@@ -430,6 +430,12 @@
 
         ga('create', 'UA-75645310-6', 'auto');
         ga('send', 'pageview');
+        var urlParams = new URLSearchParams(window.location.search);
+        if(urlParams.get("dns")){                        
+            ga('set', 'dimension1', urlParams.get("username"));
+            ga('set', 'dimension2', Number(urlParams.get("dns")));
+        }
+        
     </script>
 </body>
 
